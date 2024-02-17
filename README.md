@@ -1,6 +1,6 @@
 # Webpage project for @rickyedit on youtube
 
-Wrote in Spanish because I'm spanish and ricky too xd
+Writen in Spanish because I'm spanish and ricky too xd
 
 ![Example](image.png)
 
