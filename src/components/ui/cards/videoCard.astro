@@ -1,0 +1,36 @@
+---
+export type Props = {
+  title: string;
+  caption: {
+    img: {
+      link: string;
+    };
+  };
+  uploadTime: string;
+  link: string;
+};
+
+const { title, caption, uploadTime } = Astro.props;
+---
+
+<article class="card bg-stone-200 aspect-screen p-2 rounded gap-2 h-24">
+  <img
+    src={caption.img.link}
+    alt={`caption del video: ` + title}
+    class="[grid-area:caption] h-full overflow-hidden object-cover rounded"
+  />
+  <h3 class="[grid-area:title]">{title}</h3>
+  <div class="info [grid-area:info] text-xs">
+    <p class="time">{uploadTime}</p>
+  </div>
+</article>
+
+<style>
+  .card {
+    @apply grid;
+    grid-template-areas: "caption title"
+                         "caption info";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+import { Songs } from "@/data/songs.ts";
+import MusicCard from "@/components/ui/cards/musicCard.astro";
+---
+
+<section class="mt-2">
+  <h2 class="font-Inconsolata pb-2">Últimas canciones</h2>
+  <ul id="wrapper" class="flex flex-row gap-3 w-full overflow-x-auto">
+    {
+      Songs.map((e) => {
+        return (
+          <li>
+            <MusicCard title={e.title} caption={e.caption} />
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

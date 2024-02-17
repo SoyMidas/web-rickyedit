@@ -1,0 +1,37 @@
+---
+import type { VideoProps } from "@/data/videos.ts";
+import { Videos } from "@/data/videos.ts";
+import VideoCard from "@/components/ui/cards/videoCard.astro";
+---
+
+<section>
+  <h2 class="font-Inconsolata pb-2">Últimos videos</h2>
+  <ul id="wrapper" class="flex flex-row gap-3 w-full overflow-x-scroll">
+    {
+      Videos.map((e: VideoProps) => {
+        return (
+          <li class="w-full">
+            <VideoCard
+              title={e.title}
+              caption={e.caption}
+              uploadTime={e.uploadTime}
+              link={e.link}
+            />
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  #content {
+    @apply pt-16;
+  }
+
+  #wrapper {
+    scrollbar-color: #8f9396 white;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+</style>

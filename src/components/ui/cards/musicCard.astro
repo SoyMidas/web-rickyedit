@@ -1,0 +1,20 @@
+---
+type Props = {
+  title: string;
+  caption: {
+    img: {
+        link:string;
+    };
+  };
+};
+
+const { title, caption } = Astro.props;
+---
+
+<a href="#" class="h-12 aspect-square inline-block">
+  <img
+    class="rounded-full p-[2px] bg-orange-300"
+    src={caption.img.link}
+    alt={`Portada de ` + title}
+  />
+</a>
